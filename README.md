@@ -1,3 +1,22 @@
+TODO APP
+
+Live: [todo-app-furkaner.netlify.app](https://todo-app-furkaner.netlify.app/)
+
+  * State control handled by redux toolkit.
+
+  
+
+  * Typescript
+  * localStorage
+  
+  
+  
+
+
+
+----------
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
