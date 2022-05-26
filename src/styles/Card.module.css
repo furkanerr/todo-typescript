@@ -1,0 +1,110 @@
+.container{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top:1px solid #dee2e6;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    padding: 22px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+.container:hover > .deleteButton {
+    display: block;
+    background-color: red;
+    color: #fff;
+    border-radius: 20px;
+    width: 85px;
+    text-align: center;
+    padding: 10px;
+    margin-right: 5px;
+    left: 820px;
+    position: absolute;
+
+    cursor: pointer;
+    border: none;
+    opacity: 1;
+   
+}
+
+.container:hover{
+    background-color: #f5f5f5;
+}
+
+.deleteButton{
+display: none;
+
+opacity: 0;
+
+}
+.card{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+  
+    
+}
+.container h2{
+    font-size: 2.5rem;
+   
+}
+.left{
+    width: 27%;
+    background-color: #4d4c5f;
+    color: #fff;
+    aspect-ratio: 1;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;;
+    justify-content: center;
+}
+.right{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+.buttonGroup{
+    display: flex;
+    margin: 10px;
+    
+    width: 60%;
+    align-items: center;
+    justify-content: space-between;
+}
+.url{
+    color: grey;
+    font-size: 1.5rem;
+}
+.buttonUp{
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.buttonUp:hover{
+    transform: scale(1.1);
+}
+.buttonDown{
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.buttonDown:hover{
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 1035px){
+   
+    .left{
+        font-size: 20px;
+        width: 25%;
+    }
+   
+}

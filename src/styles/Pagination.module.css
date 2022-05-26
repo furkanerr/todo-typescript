@@ -1,0 +1,26 @@
+.pageItem{
+    display: inline-block;
+    
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 2px;
+    text-decoration: none;
+    color: black;
+    transition: all .3s ease-in-out;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.pageItem:hover{
+    transform: scale(1.1);
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    
+}

@@ -1,0 +1,43 @@
+.Container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.Header{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #dee2e6;;
+    padding-bottom: 20px;
+}
+
+.Header span {
+    
+    font-weight: bold;
+    color:gray;
+
+}
+.left{
+    font-size: 50px;
+}
+.right{
+    font-size: 50px;
+}
+
+
+@media (max-width: 1035px){
+    .Header{
+        flex-direction: column;
+    }
+    .left{
+        font-size: 40px;
+    }
+    .right{
+        font-size: 40px;
+    }
+}
