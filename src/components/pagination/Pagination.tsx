@@ -50,7 +50,7 @@ const Pagination: React.FC<Props> = ({
             </li>
           </>
         ))}
-         {currentPage !== pageNumbers.length  ? (
+         {currentPage !== pageNumbers?.length && pageNumbers.length !=0 ? (
               <li
                 className={style.pageItem}
                 onClick={() => handlePrevNext(currentPage + 1)}

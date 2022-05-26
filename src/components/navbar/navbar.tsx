@@ -17,7 +17,7 @@ function Navbar() {
         <div className={style.OrderByPoint} onClick={handleOrderByPoint}>Order By Point</div>
         <div className={style.OrderByPoint} onClick={handleOrderByName}>Order By Name</div>
         <div className={style.right}>
-            <div className={style.addwithModal}>Add With Modal</div>
+           
             <Link to={'/newLink'}>
             <div className={style.addNewLink}>Add New Link</div>
             </Link>
