@@ -17,16 +17,14 @@ interface LinkUrl
 
 function Homepage() { 
 
-  const point = useAppSelector((state) => state.links.point);
-  const [links,setLinks] = useState <LinkUrl[]>([]);
+  const stateLink = useAppSelector((state) => state.links.linkUrl);
+ // const [links,setLinks] = useState <LinkUrl[]>([]);
   const [currentPage,setCurrentPage] = useState(1);
   const [linksPerPage] = useState(2);
   const indexOfLastLink = currentPage * linksPerPage;
   const indexOfFirstLink = indexOfLastLink - linksPerPage;
-  const currentLinks = links.slice(indexOfFirstLink,indexOfLastLink);
-  useEffect(() => {
-    setLinks(JSON.parse(localStorage.getItem('link') || '[]'))
-  },[point])
+  const currentLinks = stateLink.slice(indexOfFirstLink,indexOfLastLink);
+
 
  
   
@@ -45,7 +43,7 @@ function Homepage() {
               })
             }  
             </div>
-            <Pagination  linkPerPage={linksPerPage}  totalLinks={links.length}  setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <Pagination  linkPerPage={linksPerPage}  totalLinks={stateLink.length}  setCurrentPage={setCurrentPage} currentPage={currentPage}/>
             </main>
         
     </div>

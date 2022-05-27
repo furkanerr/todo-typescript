@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function NewLink() {
 
-  const linkRedux = useAppSelector((state) => state.links);
+  const linkRedux = useAppSelector((state) => state.links.linkUrl);
   const dispatch = useAppDispatch()
   const [name,setName] = useState('');
   const [url,setUrl] = useState('');
