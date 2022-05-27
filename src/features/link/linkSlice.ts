@@ -38,23 +38,23 @@ export const linkSlice = createSlice({
         point: action.payload.point
       },...state.linkUrl]
         console.log(state.linkUrl)
-      //   let link =localStorage.getItem('link') || '[]';
+        let link =localStorage.getItem('link') || '[]';
      
-      // localStorage.setItem('link', JSON.stringify([...JSON.parse(link),{
-      //   id: action.payload.id,
-      //   name: action.payload.name,
-      //   url: action.payload.url,
-      //   point: action.payload.point
-      // }]))
+      localStorage.setItem('link', JSON.stringify([...JSON.parse(link),{
+        id: action.payload.id,
+        name: action.payload.name,
+        url: action.payload.url,
+        point: action.payload.point
+      }]))
     },
     increment: (state,action:PayloadAction<string>) => {
-      // let link = JSON.parse(localStorage.getItem('link') || '0' ) ;
-      // link.forEach((element:LinkUrl) => {
-      //   if(element.id === action.payload){
-      //     element.point++
+      let link = JSON.parse(localStorage.getItem('link') || '0' ) ;
+      link.forEach((element:LinkUrl) => {
+        if(element.id === action.payload){
+          element.point++
           
-      //   }
-      // })
+        }
+      })
       state.linkUrl.forEach((element:LinkUrl) => {
         if(element.id == action.payload){
           console.log(element.id)
@@ -63,47 +63,47 @@ export const linkSlice = createSlice({
         }
       })
       console.log(state.linkUrl)
-   // let orderedLinks= link.sort((a:LinkUrl,b:LinkUrl) => b.point - a.point)
+   let orderedLinks= link.sort((a:LinkUrl,b:LinkUrl) => b.point - a.point)
       
-    //  localStorage.setItem('link', JSON.stringify(orderedLinks))
+     localStorage.setItem('link', JSON.stringify(orderedLinks))
     },
     decrement: (state,action:PayloadAction<string>) => {
-      // let link = JSON.parse(localStorage.getItem('link') || '0' ) ;
-      // link.forEach((element:LinkUrl) => {
-      //   if(element.id == action.payload){
-      //     element.point--
+      let link = JSON.parse(localStorage.getItem('link') || '0' ) ;
+      link.forEach((element:LinkUrl) => {
+        if(element.id == action.payload){
+          element.point--
           
-      //   }
-      // });
+        }
+      });
       state.linkUrl.forEach((element:LinkUrl) => {
         if(element.id === action.payload){
           element.point--
 
         }
       });
-     // let orderedLinks= link.sort((a:LinkUrl,b:LinkUrl) => b.point - a.point)
-     // localStorage.setItem('link', JSON.stringify(orderedLinks))
+     let orderedLinks= link.sort((a:LinkUrl,b:LinkUrl) => b.point - a.point)
+     localStorage.setItem('link', JSON.stringify(orderedLinks))
     },
     orderByName: (state) => {
-      // let link = JSON.parse(localStorage.getItem('link') || '0' ) ;
-      // let orderedLinks= link.sort((a:LinkUrl,b:LinkUrl) => a.name.localeCompare(b.name))
-      // localStorage.setItem('link', JSON.stringify(orderedLinks))
+      let link = JSON.parse(localStorage.getItem('link') || '0' ) ;
+      let orderedLinks= link.sort((a:LinkUrl,b:LinkUrl) => a.name.localeCompare(b.name))
+      localStorage.setItem('link', JSON.stringify(orderedLinks))
         state.linkUrl = state.linkUrl.sort((a:LinkUrl,b:LinkUrl) => a.name.localeCompare(b.name))
     },
     orderByPoint: (state) => {
-      // let link = JSON.parse(localStorage.getItem('link') || '0' ) ;
-      // let orderedLinks= link.sort((a:LinkUrl,b:LinkUrl) => b.point - a.point)
-      // localStorage.setItem('link', JSON.stringify(orderedLinks))
+      let link = JSON.parse(localStorage.getItem('link') || '0' ) ;
+      let orderedLinks= link.sort((a:LinkUrl,b:LinkUrl) => b.point - a.point)
+      localStorage.setItem('link', JSON.stringify(orderedLinks))
 
         state.linkUrl = state.linkUrl.sort((a:LinkUrl,b:LinkUrl) => b.point - a.point);
       
     },
     deleteLink: (state, action: PayloadAction<string>) => {
-      // let link = JSON.parse(localStorage.getItem('link') || '0' ) ;
-      // let newLink = link.filter((element:LinkUrl) => element.id !== action.payload)
-      // localStorage.setItem('link', JSON.stringify(newLink))
-      // let stateNewLink=  state.linkUrl.filter((element:LinkUrl) => element.id !== action.payload)
-      // state.linkUrl = stateNewLink
+      let link = JSON.parse(localStorage.getItem('link') || '0' ) ;
+      let newLink = link.filter((element:LinkUrl) => element.id !== action.payload)
+      localStorage.setItem('link', JSON.stringify(newLink))
+      let stateNewLink=  state.linkUrl.filter((element:LinkUrl) => element.id !== action.payload)
+      state.linkUrl = stateNewLink
       state.linkUrl = state.linkUrl.filter((element:LinkUrl) => element.id !== action.payload)
     }
   },

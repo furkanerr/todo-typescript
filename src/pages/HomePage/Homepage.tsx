@@ -18,13 +18,16 @@ interface LinkUrl
 function Homepage() { 
 
   const stateLink = useAppSelector((state) => state.links.linkUrl);
- // const [links,setLinks] = useState <LinkUrl[]>([]);
+  const [links,setLinks] = useState <LinkUrl[]>([]);
   const [currentPage,setCurrentPage] = useState(1);
   const [linksPerPage] = useState(2);
   const indexOfLastLink = currentPage * linksPerPage;
   const indexOfFirstLink = indexOfLastLink - linksPerPage;
-  const currentLinks = stateLink.slice(indexOfFirstLink,indexOfLastLink);
-
+  const currentLinks = links.slice(indexOfFirstLink,indexOfLastLink);
+  useEffect(() => {
+    setLinks(stateLink)
+    console.log("stateLink",stateLink)
+  },[stateLink])
 
  
   
@@ -43,7 +46,7 @@ function Homepage() {
               })
             }  
             </div>
-            <Pagination  linkPerPage={linksPerPage}  totalLinks={stateLink.length}  setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <Pagination  linkPerPage={linksPerPage}  totalLinks={links.length}  setCurrentPage={setCurrentPage} currentPage={currentPage}/>
             </main>
         
     </div>
