@@ -6,6 +6,7 @@ import Navbar from '../../components/navbar/navbar'
 import Pagination from '../../components/pagination/Pagination'
 import style from '../../styles/Homepage.module.css'
 
+import {selectAllLink} from '../../features/link/linkSlice'
 
 interface LinkUrl 
   {
@@ -17,19 +18,18 @@ interface LinkUrl
 
 function Homepage() { 
 
-  const stateLink = useAppSelector((state) => state.links.linkUrl);
+  const stateLink = useAppSelector(selectAllLink);
+
+
   const [links,setLinks] = useState <LinkUrl[]>([]);
   const [currentPage,setCurrentPage] = useState(1);
   const [linksPerPage] = useState(2);
   const indexOfLastLink = currentPage * linksPerPage;
   const indexOfFirstLink = indexOfLastLink - linksPerPage;
-  const currentLinks = links.slice(indexOfFirstLink,indexOfLastLink);
-  useEffect(() => {
-    setLinks(stateLink)
-    console.log("stateLink",stateLink)
-  },[stateLink])
+  const currentLinks = stateLink.slice(indexOfFirstLink,indexOfLastLink);
 
- 
+  
+
   
   return (
     <div>
