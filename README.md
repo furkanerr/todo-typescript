@@ -1,6 +1,6 @@
 TODO APP
 
-Live: [todo-app-furkaner.netlify.app](https://todo-app-furkaner.netlify.app/)
+
 
 
 * State management handled by redux toolkit.
